@@ -1,0 +1,2118 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://khalid-elbadawi.github.io/C2013/lectures/lec001/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../lec002/">
+      
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+    
+    
+      
+        <title>Lecture 0: Review - Part 1 - Programming Fundamentals (2)</title>
+      
+    
+    
+  <!-- Add styles that need to run before here -->
+  
+      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>');}</style>
+
+
+    
+  <!-- Add styles that need to run afterwards here -->
+  <link rel="stylesheet" href="/stylesheets/numbering.css" />
+
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lecture-0-review-part-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Programming Fundamentals (2)" class="md-header__button md-logo" aria-label="Programming Fundamentals (2)" data-md-component="logo">
+      
+  <img src="../../images/fmsi.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programming Fundamentals (2)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lecture 0: Review - Part 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Programming Fundamentals (2)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  Lectures
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programming Fundamentals (2)" class="md-nav__button md-logo" aria-label="Programming Fundamentals (2)" data-md-component="logo">
+      
+  <img src="../../images/fmsi.png" alt="logo">
+
+    </a>
+    Programming Fundamentals (2)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Fundamentals (2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Lectures
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Lectures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lecture 0: Review - Part 1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 0: Review - Part 1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of Programming
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview of Programming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debugging-and-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging and IDE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-program-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      C++ Program Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C++ Program Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-types-and-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Types and Expressions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Types and Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constants-and-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constants and Literals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercises_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope-and-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scope and Lifetime
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lvalue-and-rvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lvalue and Rvalue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization-and-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialization and Assignment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec002/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 0: Review - Part 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec011/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 1: Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 2: Pointers and Dynamic Arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of Programming
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview of Programming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debugging-and-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging and IDE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-program-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      C++ Program Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C++ Program Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-types-and-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Types and Expressions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Types and Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constants-and-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constants and Literals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercises_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope-and-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scope and Lifetime
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lvalue-and-rvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lvalue and Rvalue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization-and-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialization and Assignment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="lecture-0-review-part-1">Lecture 0: Review - Part 1</h1>
+<h2 id="overview-of-programming">Overview of Programming</h2>
+<p>We start this review with a quote from very famous computer scientist:</p>
+<blockquote>
+<p>Programming is learned by writing programs</p>
+<p><em>Brian Kernighan</em></p>
+</blockquote>
+<p>Indeed! If you want to be professional in programming, then you must spend a lot of time (really a lot
+of time) writing several programs in front of a PC/laptop. Writing codes in a paper is not sufficient.
+You must write and run your programs. The purpose is to get familiar with programming environment
+and give you a feel of how you can get a computer to do things for you.</p>
+<div class="admonition example">
+<p class="admonition-title">Programming</p>
+<p>Programming is the activity of writing and testing programs</p>
+</div>
+<p>The figure below shows a very basic view of the program development process. Generally, programming involves two activities: <strong>writing and testing</strong>. After designing your algorithm, you go through the
+following steps:</p>
+<pre class="mermaid"><code>flowchart LR
+    S1[Edit] --&gt; S2[Compile] --&gt; C1{error?} -- No --&gt; S3[Run a test] --&gt; C2{Pass?} -- Yes --&gt; C3{Another test?} -- No --&gt; F(Done)
+    C1 -- Yes --&gt; S1
+    C2 -- No --&gt; S1
+    C3 -- Yes --&gt; S3</code></pre>
+<ol>
+<li>Edit your program and save it in a source file,</li>
+<li>Compile the source file to find any syntax error; if there is one, you return back to Step (1) to fix it. The compiler will emit an error message to guide you on how to fix the error. If the source file has compiled successfully, an executable file would be generated.</li>
+<li>Prepare a list of test cases to cover all execution paths to examine the logic of your algorithm.</li>
+<li>Pick one test case and run your program. If your program outputs unexpected result (i.e., the test case is failed), which indicates a logical error, then you need to go back to Step (1). Sometimes, you may need to return back to the very beginning and revise your algorithm.</li>
+<li>If your program passed all test cases, then you are done.</li>
+</ol>
+<h3 id="debugging-and-ide">Debugging and IDE</h3>
+<p>You, as a programmer, must test your program thoroughly, comparing the expected results to those that actually occur. When defects are found, they must be traced back to the source of the problem in the code/algorithm and corrected. The process of finding and correcting defects in a program is called <em>debugging</em>. Logical errors can manifest themselves in many ways, and the actual root cause might be difficult to discover.</p>
+<p>A software development environment is a set of tools used to create, compile, run, test, and modify a program. Some environments are referred to as integrated development environment (IDE) because they integrate various tools into one software program and provide a convenient graphical user interface (GUI). Most IDEs are shipped with a <strong>debugger</strong> tool, which helps you to debug your programs.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You must be familiar with this tool.</p>
+</div>
+<h3 id="semantics">Semantics</h3>
+<p>One final remark before proceeding to the next section is that writing and debugging require you to be fully aware of statements’ semantics.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Semantics of a statement</p>
+<p>The semantics of a statement in a programming language define what will happen when that statement is executed</p>
+</div>
+<p>Programming languages are generally unambiguous, which means the semantics of a program are well defined. That is, there is one and only one interpretation for each statement. For example, consider the highlighted line:</p>
+<div class="language-c++ highlight"><span class="filename">Example</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// define a variable of type int</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="hll"><span class="w">    </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span><span class="w"> </span><span class="c1">// What is the semantics of this statement? (1)</span>
+</span></span></code></pre></div>
+<ol>
+<li>Put 99 to the object named by <code>length</code>.</li>
+</ol>
+<p>Here, as the left–hand side of the assignment statement, <code>length</code> means "<em>the object named</em> by <code>length</code>," so that the assignment statement is read "Put 99 into the object named by <code>length</code>."</p>
+<h2 id="c-program-structure">C++ Program Structure</h2>
+<div class="language-cpp highlight"><span class="filename">A typical C++ program</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// this program outputs the message &quot; Hello World !&quot; to the monitor</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">// MAIN function</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">{</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; Hello World !&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="exercises">Exercises</h3>
+<div class="admonition exercise">
+<p class="admonition-title">Exercises</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Questions</label><label for="__tabbed_1_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li><strong>Why are the following not comments?</strong>
+    <div class="language-markdown highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>(a) /*/
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>(b) /* comment? * /
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>(c) // Is this
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    a comment?
+</span></code></pre></div></li>
+<li><strong>What is the difference between:</strong>
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="err">#</span><span class="n">include</span><span class="w"> </span><span class="o">&lt;</span><span class="n">iostream</span><span class="o">&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="err">#</span><span class="n">include</span><span class="w"> </span><span class="o">&lt;</span><span class="n">iostream</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
+</span></code></pre></div></li>
+<li><strong>What is the difference between:</strong>
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>(a) #include &lt;string.h&gt;
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>(b) #include &lt;cstring&gt;
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>(c) #include &lt;string&gt;
+</span></code></pre></div></li>
+<li><strong>Correct the following code without using the keywords <code>using</code> and <code>namespace</code>:</strong>
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="s">&quot;Hello World!&quot;</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
+</span></code></pre></div></li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>
+<p>(a) It should be either <code>//</code> or <code>/* */</code>. (b) There should be no space between <code>*</code> and <code>/</code> at the end. (c) <code>//</code> is a line comment. So, the second line should also begin with <code>//</code></p>
+</li>
+<li>
+<p>No difference. <code>&lt;iostream.h&gt;</code> is an older header file corresponding to the new header file <code>&lt;iostream&gt;</code>.</p>
+</li>
+<li>
+<p>(a) This is the old header name for <code>&lt;cstring&gt;</code>. 
+    (b) This is to include C-style string library. 
+    (c) This is to include C++ string library.</p>
+</li>
+<li>The corrected code is:
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">{</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">std</span><span class="p">.</span><span class="n">cout</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="s">&quot;Hello World!&quot;</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">std</span><span class="p">.</span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+</span></code></pre></div></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<h2 id="data-types-and-expressions">Data Types and Expressions</h2>
+<p>Recall the following. It is important to understand and remember each definition</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definitions</p>
+<dl>
+<dt><strong>Type</strong></dt>
+<dd>A type defines a set of possible values and a set of operations defined on them.</dd>
+<dt><strong>Object</strong></dt>
+<dd>An object is some memory that holds a value.</dd>
+<dt><strong>Value</strong></dt>
+<dd>A value is a set of bits in memory interpreted according to a type.</dd>
+<dt><strong>Variable</strong></dt>
+<dd>A variable is a named object.</dd>
+<dt><strong>Declaration</strong></dt>
+<dd>A declaration is a statement that gives a name to an object along with a type.</dd>
+<dt><strong>Definition</strong></dt>
+<dd>A definition is a declaration that sets aside memory for an object.</dd>
+</dl>
+</div>
+<h3 id="examples">Examples</h3>
+<div class="admonition question annotate">
+<p class="admonition-title">What is the semantics of:</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+</span></code></pre></div>
+<p><a class="glightbox" href="../images/datatype.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="right" alt="Data Type" src="../images/datatype.svg" width="320" /></a> </p>
+<p>This is a <em>definition</em> statement:</p>
+<ol>
+<li>It creates a new object by allocating four-byte memory. (1)</li>
+<li>The new object will be named <code>length</code>.</li>
+<li>The data type of <code>length</code> is <code class="language-c++ highlight"><span class="kt">int</span></code>.</li>
+<li>The object will be <mark class="critic">initialized</mark> with the value of 100.</li>
+</ol>
+</div>
+<ol>
+<li>I am assuming the size of <code class="language-c++ highlight"><span class="kt">int</span></code> is 4 bytes</li>
+</ol>
+<p>Be aware of the highlighted text above. The object will be initialized, not assigned.</p>
+<div class="admonition question">
+<p class="admonition-title">What is the semantics of:</p>
+<p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span>
+</span></code></pre></div>
+This is an <em>assignment</em> statement. It means to put/assign the value 99 into/to the object named by <code>length</code>.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">What is the semantics of:</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
+</span></code></pre></div>
+<p><a class="glightbox" href="../images/reference.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="right" alt="Data Type" src="../images/reference.svg" width="300" /></a></p>
+<p>Semantically, this is a <em>declaration</em> statement. It means as follows. The object named by <code>length</code> has a new (another) name, which is <code>side</code>, as shown. Consequently, we have ONE object that can be referenced by two names: <code>side</code> and <code>length</code>.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">What is the semantics of:</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
+</span></code></pre></div>
+<p><a class="glightbox" href="../images/assignment.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="right" alt="Assignment" src="../images/assignment.svg" width="300" /></a></p>
+<p>This is a <em>definition</em> statement:</p>
+<ol>
+<li>It creates a new object by allocating four-byte memory.</li>
+<li>The new object will be named <code>side</code>.</li>
+<li>The data type of <code>side</code> is <code class="language-c++ highlight"><span class="kt">int</span></code>.</li>
+<li>The object will be initialized with the value of <code>length</code>.</li>
+</ol>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Self-Check</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Question</label><label for="__tabbed_2_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>What is the output of the following program?</strong>
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">side</span><span class="p">;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="n">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">side</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">    </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;length = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;side = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">side</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;width = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;total = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<p>length = 2 </br>
+side = 2   </br>
+width = 11 </br>
+total = 15</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="data-types">Data Types</h3>
+<ol>
+<li>Built-in data types:<ol>
+<li>Ordinal types: <code class="language-c++ highlight"><span class="kt">int</span></code>, <code class="language-c++ highlight"><span class="kt">char</span></code>.<ul>
+<li>C++11 signed integer types: <code class="language-c++ highlight"><span class="kt">int8_t</span></code>, <code class="language-c++ highlight"><span class="kt">int16_t</span></code>, <code class="language-c++ highlight"><span class="kt">int32_t</span></code>, <code class="language-c++ highlight"><span class="kt">int64_t</span></code>.</li>
+<li>C++11 unsigned integer types: <code class="language-c++ highlight"><span class="kt">uint8_t</span></code>, <code class="language-c++ highlight"><span class="kt">uint16_t</span></code>, <code class="language-c++ highlight"><span class="kt">uint32_t</span></code>, <code class="language-c++ highlight"><span class="kt">uint64_t</span></code>.</li>
+</ul>
+</li>
+<li>Boolean type: <code class="language-c++ highlight"><span class="kt">bool</span></code>.</li>
+<li>Floating-point types: <code class="language-c++ highlight"><span class="kt">float</span></code>, <code class="language-c++ highlight"><span class="kt">double</span></code>.</li>
+<li>String type: <code class="language-c++ highlight"><span class="n">string</span></code></li>
+</ol>
+</li>
+<li>Type modifiers:<ol>
+<li>Sign modifiers (for ordinal types): <code class="language-c++ highlight"><span class="kt">signed</span></code>, <code class="language-c++ highlight"><span class="kt">unsigned</span></code>.</li>
+<li>Size modifiers: <code class="language-c++ highlight"><span class="kt">short</span></code>, <code class="language-c++ highlight"><span class="kt">long</span></code>, <code class="language-c++ highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code>.</li>
+<li>Storage modifiers: <code class="language-c++ highlight"><span class="k">static</span></code>, <code class="language-c++ highlight"><span class="k">const</span></code>, <code class="language-c++ highlight"><span class="k">auto</span></code></li>
+</ol>
+</li>
+<li>Type specifier: <code class="language-c++ highlight"><span class="k">auto</span></code></li>
+</ol>
+<h3 id="constants-and-literals">Constants and Literals</h3>
+<ol>
+<li>
+<p>Integer constants: </p>
+<ul>
+<li>Decimal constants (<code class="language-c++ highlight"><span class="kt">int</span></code>): <code>3</code>, <code>-40</code> or <code>12024</code></li>
+<li>Binary constants (<code class="language-c++ highlight"><span class="kt">int</span></code>): <code>0b101001011</code> or <code>0b1010'0111</code></li>
+<li>Octal constants (<code class="language-c++ highlight"><span class="kt">int</span></code>): <code>023</code></li>
+<li>Hexadecimal constants (<code class="language-c++ highlight"><span class="kt">int</span></code>): <code>0x1A</code> or <code>0x1a</code></li>
+<li>Unsigned constants: <code>123u</code>, <code>123U</code>, or <code>0xFFFFu</code></li>
+<li>Long constants: <code>123l</code>, <code>123L</code> or <code>0xFFFFL</code></li>
+<li>Unsigned long constants: <code>123ul</code>, <code>123UL</code> or <code>0xFFFFUL</code> </li>
+</ul>
+</li>
+<li>
+<p>Character constants (type is <code class="language-c++ highlight"><span class="kt">char</span></code>)</p>
+<ul>
+<li>Letters: <code>'a'</code>, <code>'B'</code>, <code>'+'</code> or <code>' '</code></li>
+<li>Escape sequence: <code>'\t'</code>, <code>'\r'</code>, <code>'\n'</code>, <code>'\0'</code>, <code>'\x20'</code> or <code>\101</code></li>
+</ul>
+</li>
+<li>Floating-point constants: <code>1.2</code>, <code>2.001</code>, <code>-0.0234</code>, <code>9e-5</code> or <code>-2.34E3</code><ul>
+<li><em>No suffix</em> defines <code class="language-c++ highlight"><span class="kt">double</span></code></li>
+<li><code>f</code> or <code>F</code> defines  <code class="language-c++ highlight"><span class="kt">float</span></code></li>
+<li><code>l</code> or <code>L</code> defines <code class="language-c++ highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">double</span></code></li>
+</ul>
+</li>
+<li>Boolean constants: <code class="language-c++ highlight"><span class="nb">true</span></code>, <code class="language-c++ highlight"><span class="nb">false</span></code>.</li>
+<li>Recall that literals are <em>named</em> constant<ol>
+<li>Example (1): <code class="language-c++ highlight"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LENSIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span></code> Here <code>LENSIZE</code> is a constant integer with value <code>10</code>.</li>
+<li>Example (2): <code class="language-c++ highlight"><span class="k">constexpr</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span></code></li>
+</ol>
+</li>
+</ol>
+<h3 id="expressions">Expressions</h3>
+<ul>
+<li>The most basic building block of programs.</li>
+<li>An expression can be:<ol>
+<li>a constant,</li>
+<li>a variable (must have a value),</li>
+<li>a function call, </li>
+<li>an <em>arithmetic</em> <strong>operation</strong>, or</li>
+<li>a <em>logical</em> <strong>operation</strong> that evaluates to TRUE or FALSE</li>
+</ol>
+</li>
+<li>The type of an expression is the type of its value</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">What is an operation?</p>
+<p>An operation is an expression that is composed of a set of <strong>operands</strong> and a set of <strong>operators</strong>. The operation is <em>parsed</em> according to the operator(s) <strong>priority</strong> and <strong>associativity</strong>. Each operand by itself is an expression.</p>
+<p>The expression <code class="language-c++ highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span></code> is parsed as <code class="language-c++ highlight"><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span></code>, and not as 
+<code class="language-c++ highlight"><span class="p">(</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">)</span></code></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 1</p>
+<p>Consider the following expression: <code class="language-c++ highlight"><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span></code>.
+Simply, this expression consists of three operands (<code class="language-c++ highlight"><span class="mi">10</span></code>, <code class="language-c++ highlight"><span class="mi">2</span></code>, and <code class="language-c++ highlight"><span class="mi">4</span></code>) and two operators (<code class="language-c++ highlight"><span class="o">+</span></code> and <code class="language-c++ highlight"><span class="o">/</span></code>). It will be parsed as <code class="language-c++ highlight"><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w">  </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span></code> and, eventually, evaluated as follows:</p>
+<div class="arithmatex">\[
+\begin{align*}
+    10 ~~+~~ 2 ~~/~~ 4 &amp;= 10 ~~+~~ \underbrace{2 ~~/~~ 4}_\text{(1)} \\
+    &amp;= 10 ~~+~~ 0 \\
+    &amp;= \underbrace{10 ~~+~~ 0}_\text{(2)} \\
+    &amp;= 10 
+\end{align*} 
+\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 2</p>
+<p>In these examples, we will revise the principle of <mark class="critic"> <em>associativity</em> </mark>.</p>
+<p>Consider the following expression: <code class="language-c++ highlight"><span class="mi">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span></code>. This expression will be parsed as <code class="language-c++ highlight"><span class="p">(</span><span class="mi">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span></code>. So, the evaluation will proceed as follows:</p>
+<div class="arithmatex">\[
+\begin{align*}
+    10 ~~/~~ 2 ~~/~~ 4 &amp;= \underbrace{10 ~~/~~ 2}_\text{(1)} ~~/~~ 4 \\
+    &amp;= 5 ~~/~~ 4 \\
+    &amp;= \underbrace{5 ~~/~~ 4}_\text{(2)} \\
+    &amp;= 1 
+\end{align*} 
+\]</div>
+<p>Consider the following expression: <code class="language-c++ highlight"><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span></code>. This expression will be parsed as <code class="language-c++ highlight"><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span></code> and evaluated as follows:</p>
+<div class="arithmatex">\[
+\begin{align*}
+    x ~~=~~ y ~~=~~ 10 &amp;\rightarrow x ~~=~~ \underbrace{y ~~=~~ 10}_\text{(1)} \\
+    &amp;\rightarrow x ~~=~~ y \\
+    &amp;\rightarrow \underbrace{x ~~=~~ 10}_\text{(2)} \\
+    &amp;\rightarrow x \\
+    &amp;\rightarrow 10
+\end{align*} 
+\]</div>
+</div>
+<p>The following table shows the <strong>precedence</strong> and <strong>associativity</strong> of C++ operators (from highest to lowest precedence). Operators with the same precedence number have equal precedence unless another relationship is explicitly forced by parentheses.</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Description</th>
+<th>Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td id="shade"><strong>Group 1</strong>:</td>
+<td id="shade">no associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>scope resolution</td>
+<td><code class="language-c++ highlight"><span class="o">::</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 2</strong>:</td>
+<td id="shade"><em>Naturally</em> left to right associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Array subscript</td>
+<td><code class="language-c++ highlight"><span class="p">[]</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Function call</td>
+<td><code class="language-c++ highlight"><span class="p">()</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Postfix increment (i.e., <code class="language-c++ highlight"><span class="n">a</span><span class="o">++</span></code>)</td>
+<td><code class="language-c++ highlight"><span class="o">++</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Postfix decrement (i.e., <code class="language-c++ highlight"><span class="n">a</span><span class="o">--</span></code>)</td>
+<td><code class="language-c++ highlight"><span class="o">--</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Type name</td>
+<td><code class="language-c++ highlight"><span class="k">typeid</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Constant type conversion</td>
+<td><code class="language-c++ highlight"><span class="k">const_cast</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Dynamic type conversion</td>
+<td><code class="language-c++ highlight"><span class="k">dynamic_cast</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Reinterpreted type conversion</td>
+<td><code class="language-c++ highlight"><span class="k">reinterpret_cast</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Static type conversion</td>
+<td><code class="language-c++ highlight"><span class="k">static_cast</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 3</strong>:</td>
+<td id="shade"><em>Naturally</em> right to left associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Size of object or type</td>
+<td><code class="language-c++ highlight"><span class="k">sizeof</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Prefix increment (i.e., <code class="language-c++ highlight"><span class="o">++</span><span class="n">a</span></code>)</td>
+<td><code class="language-c++ highlight"><span class="o">++</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Prefix decrement (i.e., <code class="language-c++ highlight"><span class="o">--</span><span class="n">a</span></code>)</td>
+<td><code class="language-c++ highlight"><span class="o">--</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>One's complement or bitwise NOT</td>
+<td><code class="language-c++ highlight"><span class="o">~</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Logical NOT</td>
+<td><code class="language-c++ highlight"><span class="o">!</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Unary negation</td>
+<td><code class="language-c++ highlight"><span class="o">-</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Unary plus</td>
+<td><code class="language-c++ highlight"><span class="o">+</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Address of</td>
+<td><code class="language-c++ highlight"><span class="o">&amp;</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Indirection (dereference)</td>
+<td><code class="language-c++ highlight"><span class="o">*</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Create object</td>
+<td><code class="language-c++ highlight"><span class="k">new</span></code> <code class="language-c++ highlight"><span class="k">new</span><span class="p">[]</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Destroy object</td>
+<td><code class="language-c++ highlight"><span class="k">delete</span></code> <code class="language-c++ highlight"><span class="k">delete</span><span class="p">[]</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>C-style cast</td>
+<td><code class="language-c++ highlight"><span class="p">()</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 4</strong>:</td>
+<td id="shade">left to right associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Pointer-to-member (objects or pointers)</td>
+<td><code class="language-c++ highlight"><span class="p">.</span><span class="o">*</span></code> <code class="language-c++ highlight"><span class="o">-&gt;*</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 5</strong>:</td>
+<td id="shade">left to right associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Multiplication</td>
+<td><code class="language-c++ highlight"><span class="o">*</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Division</td>
+<td><code class="language-c++ highlight"><span class="o">/</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Modulus</td>
+<td><code class="language-c++ highlight"><span class="o">%</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 6</strong>:</td>
+<td id="shade">left to right associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Addition</td>
+<td><code class="language-c++ highlight"><span class="o">+</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Subtraction</td>
+<td><code class="language-c++ highlight"><span class="o">-</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 7</strong>:</td>
+<td id="shade">left to right associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Left shift</td>
+<td><code class="language-c++ highlight"><span class="o">&lt;&lt;</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Right shift</td>
+<td><code class="language-c++ highlight"><span class="o">&gt;&gt;</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 8</strong>:</td>
+<td id="shade">left to right associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Less than</td>
+<td><code class="language-c++ highlight"><span class="o">&lt;</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Greater than</td>
+<td><code class="language-c++ highlight"><span class="o">&gt;</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Less than or equal to</td>
+<td><code class="language-c++ highlight"><span class="o">&lt;=</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Greater than or equal to</td>
+<td><code class="language-c++ highlight"><span class="o">&gt;=</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 9</strong>:</td>
+<td id="shade">left to right associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Equality</td>
+<td><code class="language-c++ highlight"><span class="o">==</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Inequality</td>
+<td><code class="language-c++ highlight"><span class="o">!=</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 10</strong>:</td>
+<td id="shade">left to right associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Bitwise AND</td>
+<td><code class="language-c++ highlight"><span class="o">&amp;</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 11</strong>:</td>
+<td id="shade">left to right associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Bitwise XOR (exclusive OR)</td>
+<td><code class="language-c++ highlight"><span class="o">^</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 12</strong>:</td>
+<td id="shade">left to right associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Bitwise OR  (inclusive OR)</td>
+<td><code class="language-c++ highlight"><span class="o">|</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 13</strong>:</td>
+<td id="shade">left to right associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Logical AND</td>
+<td><code class="language-c++ highlight"><span class="o">&amp;&amp;</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 14</strong>:</td>
+<td id="shade">left to right associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Logical OR</td>
+<td><code class="language-c++ highlight"><span class="o">||</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 15</strong>:</td>
+<td id="shade">right to left associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Conditional</td>
+<td><code class="language-c++ highlight"><span class="o">?:</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Assignment</td>
+<td><code class="language-c++ highlight"><span class="o">=</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Multiplication assignment</td>
+<td><code class="language-c++ highlight"><span class="o">*=</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Division assignment</td>
+<td><code class="language-c++ highlight"><span class="o">/=</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Modulus assignment</td>
+<td><code class="language-c++ highlight"><span class="o">%=</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Addition assignment</td>
+<td><code class="language-c++ highlight"><span class="o">+=</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Subtraction assignment</td>
+<td><code class="language-c++ highlight"><span class="o">-=</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Left-shift assginment</td>
+<td><code class="language-c++ highlight"><span class="o">&lt;&lt;=</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Right-shift assignment</td>
+<td><code class="language-c++ highlight"><span class="o">&gt;&gt;=</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Bitwise AND assignment</td>
+<td><code class="language-c++ highlight"><span class="o">&amp;=</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Bitwise inclusive OR assignment</td>
+<td><code class="language-c++ highlight"><span class="o">|=</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>Bitwise exclusive OR assignment</td>
+<td><code class="language-c++ highlight"><span class="o">^=</span></code></td>
+</tr>
+<tr>
+<td></td>
+<td>throw expression</td>
+<td><code class="language-c++ highlight"><span class="k">throw</span></code></td>
+</tr>
+<tr>
+<td id="shade"><strong>Group 16</strong>:</td>
+<td id="shade">left to right associativity</td>
+<td id="shade">&#x20;</td>
+</tr>
+<tr>
+<td></td>
+<td>Comma</td>
+<td><code class="language-c++ highlight"><span class="p">,</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title">Order of evaluation</p>
+<p>Consider the following expression <code>a() + b() / c()</code></p>
+<p>During the compile-time, <code>a()</code> will be parsed as a function call. Then, <code>b()</code> will be parsed as a function call. Then <code>c()</code> is parsed as a function call. Then, division is parsed. Finally addition is parsed. So, the compiler will produce <code>(call(a) + ( call(b) / call(c) ) )</code>.</p>
+<p>During the run-time, the order of function calls, <code>call(b)</code> and <code>call(c)</code>, is <em>undetermined</em>.  <code>call(c)</code> may be evaluated first or second. So, the order of evaluation of function calls can be:</p>
+<ol>
+<li><code>call(b)</code> <span class="arithmatex">\(\rightarrow\)</span> <code>call(c)</code> <span class="arithmatex">\(\rightarrow\)</span> <code>call(a)</code>, OR</li>
+<li><code>call(c)</code> <span class="arithmatex">\(\rightarrow\)</span> <code>call(b)</code> <span class="arithmatex">\(\rightarrow\)</span> <code>call(a)</code>.</li>
+</ol>
+</div>
+<h3 id="exercises_1">Exercises</h3>
+<div class="admonition exercise">
+<p class="admonition-title">Exercises</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Questions</label><label for="__tabbed_3_2">Answers</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>
+<p><strong>What is the output of the following program?</strong>
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="n">i</span><span class="p">;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>What is the output of the following program?</strong></p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Ifive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Isix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">Dfive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.0</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">Dsix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.0</span><span class="p">;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Ifive</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Isix</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Dfive</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Dsix</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Ifive</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Dsix</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Dfive</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Isix</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="p">}</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>The following fragment purports to convert from degrees Celsius to degrees Fahrenheit. However, it has an error. Fix the code.</strong>
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">32.0</span><span class="p">;</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;C is equivalent to &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;F.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Find the syntax errors in the following program and fix them, so that the program runs and displays <code>Nice</code>.</strong>
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">{</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.5</span><span class="p">;</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.23</span><span class="p">;</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.7</span><span class="p">;</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Nice &lt;&lt; &#39;</span><span class="se">\n</span><span class="s">&#39;;</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Is there an error in the following code segment? (What kind? syntactic or semantic), assume <code>x</code> is declared as <code class="language-c++ highlight"><span class="kt">int</span></code>:</strong>
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">// check if x between 1 and 10</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Correct&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="k">else</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Incorrect&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>What is the output of the following program?</strong>
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">{</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.9</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.2</span><span class="p">;</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">j</span><span class="p">;</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)((</span><span class="kt">int</span><span class="p">)</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>The following program reads three integers and displays their average. Is it written correctly?</strong>
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="p">{</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter three integers: &quot;</span><span class="p">;</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fixed</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Avg: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="n">k</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">       </span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>What is the output of the following program? Note:</strong> <em>There is no syntactic error</em>.
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="p">{</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="mi">-2</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">((</span><span class="n">b</span><span class="mi">-3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Check the answer by yourself (write and run)</li>
+<li>Write and run the code</li>
+<li>There is a logical error at <code>9/5</code>, which always produces integer <code>1</code>. The code should be
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">9.0</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">32.0</span><span class="p">;</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;C is equivalent to &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;F.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span></code></pre></div></li>
+<li>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="p">{</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.23</span><span class="p">;</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.7</span><span class="p">;</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Nice &lt;&lt; &#39;</span><span class="se">\n</span><span class="s">&#39;;</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="p">}</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Yes!. There is a semantic error. The conditional expression will be parsed as <code>( (1 &lt;= x) &lt;= 10)</code>. Regardless of the value of <code>x</code>, the conditional expression is always TRUE. The correct way to express that <span class="arithmatex">\(x\)</span> between 1 and 10 is</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">))</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Correct&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="k">else</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Incorrect&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Write and run by yourself</p>
+</li>
+<li>No, there is a logical error. The expression <code>i+j+k / 3</code> will be parsed as <code>( (i + j) + (k / 3) ). So the last</code>cout` should be:
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fixed</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Avg: &lt;&lt; (i + j + k)/3 &lt;&lt; endl;</span>
+</span></code></pre></div></li>
+<li>Write and run by yourself</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<h3 id="scope-and-lifetime">Scope and Lifetime</h3>
+<ul>
+<li>
+<p>In a nutshell, the term <em>scope</em> is associated with variables, while <em>lifetime</em> (sometimes we say <em>storage duration</em>) is associated with objects. A variable could have a local scope or global scope. Similarly, an object could have a local lifetime or global lifetime. Consider the following illustrative example:</p>
+<div class="language-c++ highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-24-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-24-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-24-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-24-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-24-10">10</a></span>
+<span class="normal"><a href="#__codelineno-24-11">11</a></span>
+<span class="normal"><a href="#__codelineno-24-12">12</a></span>
+<span class="normal"><a href="#__codelineno-24-13">13</a></span>
+<span class="normal"><a href="#__codelineno-24-14">14</a></span>
+<span class="normal"><a href="#__codelineno-24-15">15</a></span>
+<span class="normal"><a href="#__codelineno-24-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">days</span><span class="p">;</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="p">{</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">week</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="w">    </span><span class="p">.</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="w">    </span><span class="p">.</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="p">}</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9"></a>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="kt">void</span><span class="w"> </span><span class="nf">myfunc</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="p">)</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="p">{</span>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">month</span><span class="p">;</span>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14"></a><span class="w">    </span><span class="p">.</span>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15"></a><span class="w">    </span><span class="p">.</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>The variable <code>days</code> has a global scope. So, the name is <em>visible</em> from line 1 up to line 16.</p>
+</li>
+<li>The object referenced by <code>days</code> has a global lifetime. So, the object's life starts when the program starts executing and ends when the program terminates. In other words, the object will be <em>created</em> (or <em>constructed</em>) when the program starts and <em>destroyed</em> when the program terminates.</li>
+<li>The variable <code>week</code> is visible only within its block (i.e., from line 5 up to line 8). The life of the object referenced by <code>week</code> starts when the program executes line 5 and ends when the execution reaches line 8.</li>
+<li>The variable <code>t</code> is visible within the function block (i.e., from line 11 up to line 16). The life of the object referenced by <code>t</code> starts whenever the program invokes the function <code>myfunc</code> and ends when the function returns.</li>
+<li>The variable <code>month</code> is visible only within its block (i.e., from line 12 up to line 16). The life of the object referenced by <code>month</code> starts whenever the program executes line 12 and ends when the function returns.</li>
+<li>The variable <code>next</code> has a local scope (i.e., it's visible from line 13 up to line 16). However, the object referenced by <code>next</code> has a global lifetime, due to the keyword <code class="language-c++ highlight"><span class="k">static</span></code>. This implies that the object will be created <strong>ONLY ONCE</strong>, when the program executes the function for the first time. The object will be destroyed when the program terminates.</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Self-Check</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Question</label><label for="__tabbed_4_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>What is the output of the following program?</strong></p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">myfunc</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, y = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="w">        </span><span class="n">myfunc</span><span class="p">();</span><span class="w">       </span><span class="c1">// first call</span>
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="w">        </span><span class="n">myfunc</span><span class="p">();</span><span class="w">       </span><span class="c1">// second call</span>
+</span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="w">        </span><span class="n">myfunc</span><span class="p">();</span><span class="w">       </span><span class="c1">// third call</span>
+</span><span id="__span-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="admonition output">
+<p class="admonition-title">Output</p>
+<p>x = 5, y = 5 <br/>
+x = 5, y = 6 <br/>
+x = 5, y = 7</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="lvalue-and-rvalue">Lvalue and Rvalue</h3>
+<ul>
+<li>
+<p>One of the fundamental C++ concepts is the concept of <em>value category</em>, which we are going to explain it very briefly.</p>
+</li>
+<li>
+<p>Every C++ expression has a type, and belongs to a value category. The value categories are the basis for rules that compilers must follow when creating, copying, and moving temporary objects during expression evaluation.</p>
+</li>
+<li>
+<p>In this course, we focuses on two value categories: <strong>Lvalue</strong> and <strong>Rvalue</strong>.</p>
+<ul>
+<li><em>Lvalue</em> is an expression whose evaluation determines the identity of an object</li>
+<li><em>Rvalue</em> is an expression whose evaluation:<ul>
+<li>computes the value of an operand of a built-in operator (such rvalue has no result object), or</li>
+<li>initializes an object (such rvalue is said to have a result object).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>The following table shows some expressions that are either lvalue or rvalue.</p>
+<table>
+<thead>
+<tr>
+<th>Lvalue</th>
+<th>Rvalue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Variable name</td>
+<td>Literals</td>
+</tr>
+<tr>
+<td><code>a = b</code>, <code>a += b</code>, <code>a %= b</code>, and all other built-in assignment expressions</td>
+<td>function calls whose return type is non-reference</td>
+</tr>
+<tr>
+<td><code>++a</code> and <code>--a</code></td>
+<td><code>a++</code> and <code>a--</code></td>
+</tr>
+<tr>
+<td><code>*p</code></td>
+<td><code>&amp;a</code></td>
+</tr>
+<tr>
+<td><code>a[n]</code></td>
+<td>all built-in arithmetic and logical expressions</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">The assignment statement</p>
+<p>The left-hande side of an assignment is always treated as <em>lvalue</em> and the right-hand side is treated as <em>rvalue</em>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 1</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</span></code></pre></div>
+<ul>
+<li>The right-hand expression, which is <code>y</code>, will be treated as rvalue. The left-hand expression, which is <code>x</code>, will be treated as lvalue. </li>
+<li>The rvalue of <code>y</code> is its content (or the value of <code>y</code>). The lvalue of <code>x</code> is its memory location or the object referenced by <code>x</code>.</li>
+<li>Consequently, the meaning (or semantics) of this statement is as follows: <em>Put the value of <code>y</code> into the object named by <code>x</code></em>.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 2</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</span></code></pre></div>
+<p>If you try to compile the above statement, the compiler will throw an error message: </p>
+<blockquote>
+<p><code>lvalue required as left operand of assignment.</code></p>
+</blockquote>
+<p>Because the expression <code>x + 1</code> can't be an lvalue. No memory location associated with this expression. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 3</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="w">    </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="o">?</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span></code></pre></div>
+<p>The left-hand side, which is the conditional operator, is a valid lvalue expression, since its lvalue is either the memory location of <code>x</code> or the memory location of <code>y</code>. The right-hand side, which is <code>10</code>, is a valid rvalue. The conditional operator has the inner expression <code>(x &lt; 5)</code>, where <code>x</code> will be treated as rvalue. Therefore, the semantics is as follows. If the value of <code>x</code> is less than <code>5</code>, put the value <code>10</code> into <code>x</code>. Otherwise, put the value <code>10</code> into <code>y</code>.</p>
+</div>
+<h3 id="initialization-and-assignment">Initialization and Assignment</h3>
+<ul>
+<li>
+<p>You need to distinguish two similar, but logically distinct, operations:</p>
+<ul>
+<li><strong>Initialization</strong> (giving a variable its initial value at the time of construction)</li>
+<li><strong>Assignment</strong> (giving a variable a new value)</li>
+</ul>
+</li>
+<li>
+<p>These operations are so similar that C++ allows us to use the same notation (the <code>=</code> operator) for both. </p>
+</li>
+<li>
+<p>Let us consider the following code:
+    <div class="language-c++ highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
+<span class="normal"><a href="#__codelineno-29-2">2</a></span>
+<span class="normal"><a href="#__codelineno-29-3">3</a></span>
+<span class="normal"><a href="#__codelineno-29-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="hll"><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span><span class="w">        </span><span class="c1">// definition statement</span>
+</span></span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3"></a>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="hll"><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">             </span><span class="c1">// assignment statement</span>
+</span></span></code></pre></div></td></tr></table></div></p>
+<p>There is no doubt that the operator <code>=</code>, in line 4, is the assignment operator. It puts the value 10 into the object named by <code>width</code>. However, the operator <code>=</code>, in line 1, is NOT the assignment operator. The form <code>= 99</code> is known as an <strong>initializer</strong>. It means that as part of constructing the object named by <code>length</code>, the value <code>99</code> will be inserted, such that after the construction finishes, the variable <code>length</code> will have the initial value <code>99</code>. </p>
+</li>
+<li>
+<p>In C++, the initializer may be one of the following forms:</p>
+<ol>
+<li><code>(</code> <em>expression-list</em> <code>)</code></li>
+<li><code>=</code> <em>expression</em></li>
+<li><code>{</code> <em>initializer-list</em> <code>}</code></li>
+<li><code>{</code> designated-initializer-list<code>}</code></li>
+</ol>
+</li>
+<li>
+<p>Therefore, initialization can be written as follows:</p>
+<ul>
+<li><code class="language-c++ highlight"><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span><span class="w">   </span><span class="c1">// using the second form</span></code>
+or</li>
+<li><code class="language-c++ highlight"><span class="kt">int</span><span class="w"> </span><span class="nf">length</span><span class="w"> </span><span class="p">(</span><span class="mi">99</span><span class="p">);</span><span class="w">   </span><span class="c1">// using the first form</span></code>
+or</li>
+<li><code class="language-c++ highlight"><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="p">{</span><span class="mi">99</span><span class="p">};</span><span class="w">   </span><span class="c1">// using the third form</span></code></li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Important</p>
+<ul>
+<li>When declaring a reference variable, such as <code class="language-c++ highlight"><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span></code>, the initializer must be an <em>lvalue</em>. </li>
+<li>The initialization operation occurs at the time of object's construction. It also takes place during function calls: function parametrs and the function returns values are also initialized.</li>
+</ul>
+</div>
+<h2 id="exercises_2">Exercises</h2>
+<div class="admonition exercise">
+<p class="admonition-title">Exercises</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Questions</label><label for="__tabbed_5_2">Answers</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>
+<p>Write a program that declares two floating-point variables (e.g., <code>a</code>, <code>b</code>), assigns to them two positive values (e.g., <code>3.45</code> and <code>6.78</code>) and swaps their integer parts (i.e., <code>a</code> becomes <code>6.45</code> and <code>b</code> becomes <code>3.78</code>). For casting, use the <code class="language-c++ highlight"><span class="k">static_cast</span><span class="o">&lt;&gt;</span></code> operator.</p>
+</li>
+<li>
+<p>Write a program that reads three integers, stores them in three variables, and rotates them one place right. For example, if the user enters the numbers <code>1</code>, <code>2</code>, and <code>3</code> and they are stored in variables <code>a1</code>, <code>a2</code> and <code>a3</code>, the program should rotate their values one place right, so that <code>a1</code> becomes <code>3</code>, <code>a2</code> becomes <code>1</code>, and <code>a3</code> becomes <code>2</code>.</p>
+</li>
+<li>
+<p>Write a program that reads a three-digit positive integer, makes its hundreds ones and vice versa and displays the new number. For example, if the user enters <code>123</code>, the program should display <code>321</code>. <em>Use only one variable</em>.</p>
+</li>
+<li>
+<p>Write a program that reads a positive integer and rounds it up or down to its nearest tens. For example, if the user enters <code>13</code>, the program should display <code>10</code>. if the input number is <code>6</code>, the program should display <code>10</code>, while if it is <code>255</code>, the program should display <code>260</code>. For casting, use the <code class="language-c++ highlight"><span class="k">static_cast</span><span class="o">&lt;&gt;</span></code> operator.</p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>
+<p>Click <a href="../images/lec1e1.png">here</a> to see the logical thinking.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="p">{</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.45</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.78</span><span class="p">;</span>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dec</span><span class="p">;</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// store integer part of a</span>
+</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="w">    </span><span class="n">dec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w">  </span><span class="c1">// decimal part of a</span>
+</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dec</span><span class="p">;</span>
+</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="w">    </span><span class="n">dec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// decimal part of b</span>
+</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dec</span><span class="p">;</span>
+</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>
+</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, b = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-30-15"><a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>
+</span><span id="__span-30-16"><a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-30-17"><a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a><span class="p">}</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Click <a href="../images/lec1e2.png">here</a> to see the logical thinking</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="p">{</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">,</span><span class="w"> </span><span class="n">a3</span><span class="p">;</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter three integers (a1, a2 and a3): &quot;</span><span class="p">;</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a3</span><span class="p">;</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a3</span><span class="p">;</span>
+</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="w">    </span><span class="n">a3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a2</span><span class="p">;</span>
+</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="w">    </span><span class="n">a2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a1</span><span class="p">;</span>
+</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a><span class="w">    </span><span class="n">a1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+</span><span id="__span-31-14"><a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>
+</span><span id="__span-31-15"><a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a1 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, a2 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, a3 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a3</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-31-16"><a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-31-17"><a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a><span class="p">}</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Click <a href="../images/lec1e3.png">here</a> to see the logical thinking</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">;</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="p">{</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter three-digit positive integer: &quot;</span><span class="p">;</span>
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>
+</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="o">/</span><span class="mi">100</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="n">n</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">;</span>
+</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>
+</span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The output is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-32-16"><a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a><span class="p">}</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Think logically by yourself on how to find the nearest tens. Solve some examples manually to infer the steps</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="p">{</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter postive number: &quot;</span><span class="p">;</span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">10.0</span><span class="p">;</span>
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>
+</span><span id="__span-33-12"><a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The number after rounding to nearest 10: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-33-13"><a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-33-14"><a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a><span class="p">}</span>
+</span></code></pre></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/khalid-elbadawi"  target="_blank" rel="noopener">Khalid Elbadawi</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.select", "content.code.annotate", "navigation.indexes", "navigation.sections", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
