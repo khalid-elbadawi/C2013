@@ -60,8 +60,6 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -230,7 +228,7 @@
   
     
   
-  Programming Fundamentals (2)
+  Home
 
       </a>
     </li>
@@ -302,7 +300,7 @@
         
   
   <span class="md-ellipsis">
-    Programming Fundamentals (2)
+    Home
   </span>
   
 
@@ -552,9 +550,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dereference-operator" class="md-nav__link">
+  <a href="#indirection-operator" class="md-nav__link">
     <span class="md-ellipsis">
-      Dereference Operator
+      Indirection Operator
     </span>
   </a>
   
@@ -573,6 +571,15 @@
   <a href="#pointer-initialization" class="md-nav__link">
     <span class="md-ellipsis">
       Pointer Initialization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
     </span>
   </a>
   
@@ -747,9 +754,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dereference-operator" class="md-nav__link">
+  <a href="#indirection-operator" class="md-nav__link">
     <span class="md-ellipsis">
-      Dereference Operator
+      Indirection Operator
     </span>
   </a>
   
@@ -768,6 +775,15 @@
   <a href="#pointer-initialization" class="md-nav__link">
     <span class="md-ellipsis">
       Pointer Initialization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
     </span>
   </a>
   
@@ -1074,11 +1090,11 @@ A sample output is shown below:</p>
 </ul>
 </li>
 </ul>
-<h3 id="dereference-operator">Dereference Operator</h3>
+<h3 id="indirection-operator">Indirection Operator</h3>
 <ul>
 <li>The real benefit of pointers is that they allow you to <strong>indirectly</strong> access and modify the object being pointed to. </li>
 <li>In the previous code, <code>ptr</code> could be used to change the contents of the variable <code>length</code>. </li>
-<li>This is done with the <strong>dereference operator</strong>, which is an asterisk <code>*</code>.</li>
+<li>This is done with the <strong>indirection operator</strong> (sometimes it is also called <strong>dereference</strong> operator), which is an asterisk <code>*</code>.</li>
 <li>
 <p>Le us consider the following program:
     <div class="language-c++ highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -1102,7 +1118,7 @@ A sample output is shown below:</p>
 <p>Look at the highlighted line:
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Length = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
 </span></code></pre></div>
-The asterisk before <code>ptr</code> is a <strong>dereference operator</strong>. The expression <code>*ptr</code> returns the object named <code>length</code>. So, the above statement is exactly the same as:
+The asterisk before <code>ptr</code> is a <strong>indirection operator</strong>. The expression <code>*ptr</code> returns the object named <code>length</code>. So, the above statement is exactly the same as:
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Length = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
 </span></code></pre></div></p>
 </li>
@@ -1274,42 +1290,100 @@ graph LR
 <p><a class="glightbox" href="../images/pointer4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Null pointer" src="../images/pointer4.png" width="350" /></a></p>
 </li>
 </ul>
+<h3 id="summary">Summary</h3>
+<p>The following table provides a summary of pointer's operations:</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Syntactic context</th>
+<th>Example</th>
+<th>Meaning (Action)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>declarator</td>
+<td><code class="language-c++ highlight"><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span></code></td>
+<td>create/declare a pointer object</td>
+</tr>
+<tr>
+<td>*</td>
+<td>unary operator</td>
+<td><code class="language-c++ highlight"><span class="o">*</span><span class="n">p</span></code></td>
+<td>dereference p; the object that the pointer <code>p</code> points to</td>
+</tr>
+<tr>
+<td>*</td>
+<td>binary operator</td>
+<td><code class="language-c++ highlight"><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span></code></td>
+<td>multiply a by b</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>declarator</td>
+<td><code class="language-c++ highlight"><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span></code></td>
+<td>declare p as a reference (alias) of another object</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>unary operator</td>
+<td><code class="language-c++ highlight"><span class="o">&amp;</span><span class="n">p</span></code></td>
+<td>address of p; memory location of p</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>binary operator</td>
+<td><code class="language-c++ highlight"><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span></code></td>
+<td>bitwise AND operation</td>
+</tr>
+</tbody>
+</table>
 <h2 id="pointers-and-arrays">Pointers and Arrays</h2>
 <ul>
-<li>Let us re-visit the array definition:</li>
+<li>
+<p>Let us re-visit the array definition:</p>
+<ul>
 <li>
 <p>Consider the following array definition:
     <div class="language-c++ highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
 </span></code></pre></div>
     The compiler will perform the following:</p>
 <ol>
-<li>It allocates a contiguous memory block of size 40 bytes (since one element occupies 4 bytes).</li>
+<li>It allocates a <strong>contiguous memory block</strong> of size 40 bytes (since one element occupies 4 bytes).</li>
 <li>The address of the first byte in the memory block is named <code>a</code>.</li>
 <li>The data type of each element is <code class="language-c++ highlight"><span class="kt">int</span></code></li>
 </ol>
 </li>
-<li>
-<p>So, the variable <code>a</code> is just a symbolic constant to the first address in the block. So, <code>a</code> is eventually a pointer.</p>
+</ul>
 </li>
-<li>However, since <code>a</code> is a symbolic constant, you cannot change its value.</li>
-<li>We can visualize <code>a</code> as:
-    <a class="glightbox" href="../images/array1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Array" src="../images/array1.png" width="350" /></a></li>
+<li>
+<p>So, the variable <code>a</code> can be envisioned as just a symbolic constant to the first address in the block. So, <code>a</code> is eventually a pointer, as depicted in the following diagram:
+    <a class="glightbox" href="../images/array1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Array" src="../images/array1.png" width="350" /></a></p>
+</li>
+<li>
+<p>Since <code>a</code> is a constant, you cannot change its value.
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">      </span><span class="c1">// Error</span>
+</span></code></pre></div></p>
+</li>
 <li>
 <p>We can define a pointer variable that points to the first element in the array:
-    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
-</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">    </span><span class="c1">// ptr now points to the first element</span>
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">    </span><span class="c1">// ptr now points to the first element</span>
 </span></code></pre></div></p>
 <p>or
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 </span></code></pre></div></p>
 <p><a class="glightbox" href="../images/array2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Array2" src="../images/array2.png" width="350" /></a></p>
 </li>
 <li>
-<p>An array, in essence, is a pointer, but it points to a fixed memory location. We say that arrays are <strong>constant pointers</strong>. If <code>a</code> is an array, then the elements can be accessed using array notation or pointer notation, as illustrated in the following table:</p>
+<p>An array, in essence, is a pointer, but it points to a fixed memory location. We say that arrays are <strong>constant pointers</strong>. </p>
 </li>
-</ul>
+<li>
+<p>If <code>a</code> is an array, then the elements can be accessed using array notation or pointer notation, as illustrated in the following table:</p>
 <table>
 <thead>
 <tr>
@@ -1341,7 +1415,7 @@ graph LR
 </tr>
 </tbody>
 </table>
-<ul>
+</li>
 <li>
 <p>When working with arrays, remember the following rule:</p>
 <blockquote>
@@ -1355,14 +1429,15 @@ graph LR
 <p>C++ compiler can perform the following operations:</p>
 <ol>
 <li>add an integer to address <ins class="critic">(address + integer)</ins>,</li>
-<li>subtract an integer value from an address <ins class="critic">(address - integer)</ins>, and</li>
+<li>subtract an integer value from an address <ins class="critic">(address - integer)</ins>, </li>
+<li>subtract an address from another address <ins class="critic">(address - address</ins>, and</li>
 <li>compare two addresses using <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, and <code>&gt;=</code>.</li>
 </ol>
 </li>
 <li>
 <p>Pointer arithmetic is different from ordinary arithmetic. For example, suppose your program contains the following code:
-    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">numbers</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.1</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="p">,</span><span class="w"> </span><span class="mf">4.1</span><span class="p">,</span><span class="w"> </span><span class="mf">5.11</span><span class="p">,</span><span class="w"> </span><span class="mf">6.2</span><span class="p">,</span><span class="w"> </span><span class="mf">7.7</span><span class="p">,</span><span class="w"> </span><span class="mf">8.1</span><span class="p">,</span><span class="w"> </span><span class="mf">9.5</span><span class="p">,</span><span class="w"> </span><span class="mf">10.3</span><span class="p">};</span>
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">d</span><span class="p">{</span><span class="n">numbers</span><span class="p">};</span>
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">numbers</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.1</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="p">,</span><span class="w"> </span><span class="mf">4.1</span><span class="p">,</span><span class="w"> </span><span class="mf">5.11</span><span class="p">,</span><span class="w"> </span><span class="mf">6.2</span><span class="p">,</span><span class="w"> </span><span class="mf">7.7</span><span class="p">,</span><span class="w"> </span><span class="mf">8.1</span><span class="p">,</span><span class="w"> </span><span class="mf">9.5</span><span class="p">,</span><span class="w"> </span><span class="mf">10.3</span><span class="p">};</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">d</span><span class="p">{</span><span class="n">numbers</span><span class="p">};</span>
 </span></code></pre></div></p>
 <ul>
 <li>The pointer <code>d</code> points to the array <code>numbers</code>.</li>
@@ -1373,7 +1448,7 @@ graph LR
 </li>
 <li>
 <p>Suppose <code>d</code> is pointing to the third element as in the following code:
-    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
 </span></code></pre></div></p>
 <p>Then</p>
 <p><a class="glightbox" href="../images/array3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pointer Arithmetic" src="../images/array3.png" width="350" /></a></p>
@@ -1424,15 +1499,17 @@ graph LR
 </ul>
 <h3 id="moving-pointers-forward-backward">Moving Pointers Forward &amp; Backward</h3>
 <ul>
-<li>If <code>ptr</code> is a pointer then the expression <code>ptr + 1</code> returns the address of the <strong>next element</strong>, and the expression <code>ptr - 1</code> returns the address of the previous element, as depicted in the following diagram:
-    <a class="glightbox" href="../images/array4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Moving forward and backward" src="../images/array4.png" width="250" /></a></li>
+<li>
+<p>If <code>ptr</code> is a pointer then the expression <code>ptr + 1</code> returns the address of the <strong>next element</strong>, and the expression <code>ptr - 1</code> returns the address of the <strong>previous element</strong>, as depicted in the following diagram:</p>
+<p><a class="glightbox" href="../images/array4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Moving forward and backward" src="../images/array4.png" width="280" /></a></p>
+</li>
 <li>
 <p>Thus, the expression <code>ptr = ptr + 1</code> will update the <code>ptr</code> such that <code>ptr</code> will point to the next element. Similarly, the expression <code>ptr = ptr - 1</code> will update the <code>ptr</code> such that <code>ptr</code> will point to the previous element. The following table shows other expressions to update the pointer location:</p>
 <table>
 <thead>
 <tr>
-<th>Move forward</th>
-<th>Move backward</th>
+<th>Moving forward</th>
+<th>Moving backward</th>
 </tr>
 </thead>
 <tbody>
@@ -1461,25 +1538,7 @@ graph LR
 <p>The last row shows how to move the pointer <code>ptr</code> two steps forward or backward.</p>
 </li>
 </ul>
-<div class="language-c++ highlight"><span class="filename">Example (1)</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="p">{</span>
-</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">nums</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.3</span><span class="p">,</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span><span class="w"> </span><span class="mf">3.6</span><span class="p">};</span>
-</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">    </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">counts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
-</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
-</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
-</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">;</span><span class="w">   </span><span class="c1">// p points to first element</span>
-</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">counts</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
-</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">      </span><span class="c1">// move to next element</span>
-</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sum = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-</span><span id="__span-29-16"><a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-29-17"><a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="p">}</span>
-</span></code></pre></div>
-<div class="language-c++ highlight"><span class="filename">Example (2)</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<div class="language-c++ highlight"><span class="filename">Example (1)</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 </span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 </span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
 </span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
@@ -1488,16 +1547,134 @@ graph LR
 </span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="w">    </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">counts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
 </span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>
 </span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
-</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">;</span><span class="w">   </span><span class="c1">// p points at the beginning</span>
-</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">counts</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// q points at the end</span>
-</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">q</span><span class="p">;</span><span class="w"> </span><span class="n">p</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
-</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a><span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
-</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>
+</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">;</span><span class="w">   </span><span class="c1">// p points to first element</span>
+</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">counts</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a><span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">      </span><span class="c1">// move to next element</span>
+</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-30-15"><a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sum = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
 </span><span id="__span-30-16"><a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-30-17"><a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a><span class="p">}</span>
 </span></code></pre></div>
+<div class="language-c++ highlight"><span class="filename">Example (2)</span><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="p">{</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">nums</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.3</span><span class="p">,</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span><span class="w"> </span><span class="mf">3.6</span><span class="p">};</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="w">    </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">counts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">;</span><span class="w">   </span><span class="c1">// p points at the beginning</span>
+</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">counts</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// q points at the end</span>
+</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">q</span><span class="p">;</span><span class="w"> </span><span class="n">p</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a><span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+</span><span id="__span-31-14"><a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>
+</span><span id="__span-31-15"><a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sum = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-31-16"><a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-31-17"><a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Self-Check</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Questions</label><label for="__tabbed_1_2">Answers</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>
+<p>Write a statement that defines a pointer variable named <code>fltPtr</code>. The variable should be a pointer toa <code class="language-c++ highlight"><span class="kt">float</span></code>. Be sure to properly initialize the variable</p>
+</li>
+<li>
+<p>Assume an <code class="language-c++ highlight"><span class="kt">int</span></code> variable named <code>value</code> has been defined. Also assume a pointer to integer variable named <code>ptr</code> has been defined. Write a statement that assigns the address of the <code>value</code> variable to the <code>ptr</code> variable.</p>
+</li>
+<li>
+<p>Assume <code>ptr</code> is a pointer variable that points to another object. Write a <code>cout</code> statement that displays the value that <code>ptr</code> points to.</p>
+</li>
+<li>
+<p>What is the output of the following code?
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">70</span><span class="p">;</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">z</span><span class="p">;</span>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Rewrite the following loop so it uses pointer notation (with the indirection operator) instead of subscript notation.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Assume <code>ptr</code> is a pointer to an <code>int</code> and holds the address 12000. On a system with 4-byte integers, what address will be in <code>ptr</code> after the following statement?
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">ptr</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Assume <code>pint</code> is a pointer variable. Is each of the following statements valid or invalid? if any is invalld, why?</p>
+<ol>
+<li><code>pint++;</code></li>
+<li><code>--pint;</code></li>
+<li><code>pint /= 2</code>;</li>
+<li><code>pint *= 4;</code></li>
+<li><code>pint += x;  // Assume x is an</code> <code class="language-c++ highlight"><span class="kt">int</span></code></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>
+<p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">fltPtr</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+</span></code></pre></div>
+or
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">fltPtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">;</span>
+</span></code></pre></div>
+</li>
+<li>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span></code></pre></div>
+</li>
+<li>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>50 60 70
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>60 90 20
+</span></code></pre></div>
+</li>
+<li>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">arr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><span class="arithmatex">\(1200 + 10*4 = 1240\)</span></p>
+</li>
+<li>
+<ol>
+<li>Valid</li>
+<li>Valid</li>
+<li>Invalid because dividing address by integer is not allowed</li>
+<li>Invalid because multiplying address by integer is not allowed.</li>
+<li>Valid</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 <h2 id="pointers-and-structures">Pointers and Structures</h2>
+<ul>
+<li></li>
+</ul>
 <h2 id="dynamic-arrays">Dynamic Arrays</h2>
 
 
@@ -1558,11 +1735,11 @@ graph LR
     
       <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
       
-        <script src="../../javascripts/katex.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
