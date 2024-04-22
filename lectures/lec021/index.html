@@ -633,9 +633,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dynamic-arrays" class="md-nav__link">
+  <a href="#dynamic-memory-allocation" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Arrays
+      Dynamic Memory Allocation
     </span>
   </a>
   
@@ -837,9 +837,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dynamic-arrays" class="md-nav__link">
+  <a href="#dynamic-memory-allocation" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Arrays
+      Dynamic Memory Allocation
     </span>
   </a>
   
@@ -1442,16 +1442,22 @@ graph LR
 <ul>
 <li>The pointer <code>d</code> points to the array <code>numbers</code>.</li>
 <li>If the array is located at address 2000, then the value of <code>d</code> is also 2000.</li>
-<li>The expression <code>d + 1</code> DOES NOT simply add 1 to the number in <code>d</code>. If the size of <code>double</code> is eight bytes, then the expression <code>d + 1</code> will evaluate to the memory address 2008. This is equivalent to <code>&amp;d[1]</code>.</li>
+<li>The expression <code>d + 1</code> DOES NOT simply add 1 to the address in <code>d</code>. </li>
 <li>
-<p>The expression <code>d + 2</code> evaluates to the memory address 2016. This is equivalent to <code>&amp;d[2]</code>.</p>
+<p>In C++, when you add a value to a pointer, you are actually <ins class="critic">adding that value times the size of the data type being pointed by the pointer</ins>. If the size of <code>double</code> is eight bytes, then the expression <code>d + 1</code> will evaluate to the memory address 2008, because:</p>
+<div class="arithmatex">\[
+\text{d} + 1 = 2000 + 1 \times sizeof(double) = 2000 + 8 = 2008. 
+\]</div>
+</li>
+<li>
+<p>The expression <code>d + 2</code> evaluates to the memory address <span class="arithmatex">\(2016 = 2000 + 2\times8\)</span>.</p>
 </li>
 <li>
 <p>Suppose <code>d</code> is pointing to the third element as in the following code:
     <div class="language-c++ highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
 </span></code></pre></div></p>
-<p>Then</p>
 <p><a class="glightbox" href="../images/array3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pointer Arithmetic" src="../images/array3.png" width="350" /></a></p>
+<p>Then</p>
 <table>
 <thead>
 <tr>
@@ -1673,9 +1679,56 @@ or
 </div>
 <h2 id="pointers-and-structures">Pointers and Structures</h2>
 <ul>
-<li></li>
+<li>Defining a variable that is a pointer to a structure is as simple as defining any other pointers</li>
+<li>Here is an example:
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">Time</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+</span></code></pre></div>
+    This statement defines <code>ptr</code> as a pointer to <code>Time</code> structure.</li>
+<li>Look at the following code:
+    <div class="language-c++ highlight"><span class="filename">Example (1)</span><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">Time</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">};</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="n">Time</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="p">{</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="n">Time</span><span class="w"> </span><span class="o">*</span><span class="n">timePtr</span><span class="w"> </span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The starting time is &quot;</span><span class="p">;</span>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="n">timePtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">start</span><span class="p">;</span>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="n">printTime</span><span class="p">(</span><span class="o">*</span><span class="n">timePtr</span><span class="p">);</span>
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>
+</span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The ending time is &quot;</span><span class="p">;</span>
+</span><span id="__span-42-10"><a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a><span class="n">timePtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">end</span><span class="p">;</span>
+</span><span id="__span-42-11"><a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a><span class="n">printTime</span><span class="p">(</span><span class="o">*</span><span class="n">timePtr</span><span class="p">);</span>
+</span></code></pre></div></li>
+<li>
+<p>C++ provides a special operator to access the members of a structure through a pointer variable. This operator called <strong>structure pointer operator</strong>, and it consists of a hyphen (-) followed by the greater-than symbol (&gt;). For exmaple:
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">Time</span><span class="w"> </span><span class="n">start</span><span class="p">;</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="n">Time</span><span class="w"> </span><span class="o">*</span><span class="n">timePtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">start</span><span class="p">;</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="n">timePtr</span><span class="o">-&gt;</span><span class="n">hour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="n">timePtr</span><span class="o">-&gt;</span><span class="n">minutes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>The expression <code>timePtr-&gt;hour</code> is equivalent to <code>(*timePtr).hour</code></p>
+</li>
 </ul>
-<h2 id="dynamic-arrays">Dynamic Arrays</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The expression:
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="o">*</span><span class="n">timePtr</span><span class="p">.</span><span class="n">hour</span>
+</span></code></pre></div>
+is parsed as
+    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="o">*</span><span class="p">(</span><span class="n">timePtr</span><span class="p">.</span><span class="n">hour</span><span class="p">)</span>
+</span></code></pre></div>
+since the dot operator has higher priority than indirection operator. So, <code>timePtr.hour</code> will be evaluated first, which returns the object named <code>hour</code> inside the structure pointed by <code>timePtr</code>. So, the dereference tries to dereference <code>hour</code>, not <code>timePtr</code>.</p>
+</div>
+<h2 id="dynamic-memory-allocation">Dynamic Memory Allocation</h2>
+<ul>
+<li>
+<p>So far we have seen how to create objects using the definition statements. For example: <code>int value;</code>. The allocation of memory blocks are performed during the compile-time. This means that during compilation, , the memory locations are reserved for the defined variables. </p>
+</li>
+<li>
+<p>C++ allows us to create objects without defining them.</p>
+</li>
+</ul>
 
 
 
