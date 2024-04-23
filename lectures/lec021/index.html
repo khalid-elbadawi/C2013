@@ -633,11 +633,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dynamic-memory-allocation" class="md-nav__link">
+  <a href="#dynamic-memory-management" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Memory Allocation
+      Dynamic Memory Management
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Memory Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-new-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      The new operator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-delete-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      The delete operator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -837,11 +861,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dynamic-memory-allocation" class="md-nav__link">
+  <a href="#dynamic-memory-management" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Memory Allocation
+      Dynamic Memory Management
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Memory Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-new-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      The new operator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-delete-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      The delete operator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1720,15 +1768,17 @@ is parsed as
 </span></code></pre></div>
 since the dot operator has higher priority than indirection operator. So, <code>timePtr.hour</code> will be evaluated first, which returns the object named <code>hour</code> inside the structure pointed by <code>timePtr</code>. So, the dereference tries to dereference <code>hour</code>, not <code>timePtr</code>.</p>
 </div>
-<h2 id="dynamic-memory-allocation">Dynamic Memory Allocation</h2>
+<h2 id="dynamic-memory-management">Dynamic Memory Management</h2>
 <ul>
 <li>
-<p>So far we have seen how to create objects using the definition statements. For example: <code>int value;</code>. The allocation of memory blocks are performed during the compile-time. This means that during compilation, , the memory locations are reserved for the defined variables. </p>
+<p>So far we have seen how to create objects using the definition statements. For example: <code>int value;</code>. The allocation of memory blocks are <em>injected during the compile-time</em>. Therefore, when the program is executed, the allocation are performed <strong>auotmatically</strong> via the injected code. The destruction (deallocation) of these memory blocks are also done automatically based on the lifetime of the allocated objects.. This type of management (i.e., allocation and deallocation) is known as <strong>automatic memory management</strong>.</p>
 </li>
 <li>
-<p>C++ allows us to create objects without defining them.</p>
+<p>C++ allows us to allocate and deallocate memory blocks manually. It means that the programmer controls when the memory block is allocated and when the memory block is destructed. This type of management is known as <strong>dynamic memory management</strong>.</p>
 </li>
 </ul>
+<h3 id="the-new-operator">The <code class="language-c++ highlight"><span class="k">new</span></code> operator</h3>
+<h3 id="the-delete-operator">The <code class="language-c++ highlight"><span class="k">delete</span></code> operator</h3>
 
 
 
